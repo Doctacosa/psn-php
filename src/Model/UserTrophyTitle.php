@@ -222,6 +222,6 @@ class UserTrophyTitle extends AbstractTrophyTitle
 	
 	public function serviceName() : string
 	{
-		return $this->serviceName ??= $this->pluck('npServiceName');
+		return $this->serviceName = $this->serviceName ?? $this->pluck('npServiceName');
 	}
 }

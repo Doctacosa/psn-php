@@ -8,9 +8,9 @@ use Carbon\Carbon;
 
 class OAuthToken
 {
-    private string $token;
+    private $token;
 
-    private Carbon $expiration;
+    private $expiration;
 
     public function __construct(string $token, int $expiresIn)
     {

@@ -6,16 +6,16 @@ use FilterIterator;
 
 class GroupMembersFilter extends FilterIterator
 {
-    private array $onlineIds;
-    private bool $includesOnly;
-   
+    private $onlineIds;
+    private $includesOnly;
+
     public function __construct(Iterator $iterator, array $onlineIds, bool $includesOnly)
     {
         parent::__construct($iterator);
         $this->onlineIds = $onlineIds;
         $this->includesOnly = $includesOnly;
     }
-   
+
     public function accept()
     {
         $thread = $this->current();

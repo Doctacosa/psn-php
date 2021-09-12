@@ -143,7 +143,7 @@ class GameTitle extends Api implements Fetchable
      */
     public function id() : string
     {
-        return $this->id ??= $this->pluck('titleId');
+        return $this->id = $this->id ?? $this->pluck('titleId');
     }
 
     /**

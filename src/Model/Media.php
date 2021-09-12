@@ -62,7 +62,7 @@ class Media extends Api implements Fetchable
 	
 	public function trophyTitle() : TrophyTitle
 	{
-		return new TrophyTitle($this->getHttpClient(), $this->npCommunicationId())
+		return new TrophyTitle($this->getHttpClient(), $this->npCommunicationId());
 	}
 
 	public function titleId() : string
@@ -79,7 +79,7 @@ class Media extends Api implements Fetchable
 	 */
 	public function url() : string
 	{
-		try {
+		//try {
 			if ($this->type() == UgcType::video()) {
 				$response = $this->get('gameMediaService/v2/c2s/ugc/' . $this->ugcId . '/url');
 				return $response->videoUrl;
@@ -88,7 +88,7 @@ class Media extends Api implements Fetchable
 				$response = $this->get($this->pluck('screenshotUrl'));
 				var_dump($response); // @TestMe!
 			}
-		}
+		//}
 	}
 
 	public function fetch() : object

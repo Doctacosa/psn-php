@@ -72,7 +72,7 @@ class MessageThread extends Api
      */
     public function id(): string
     {
-        return $this->threadId ??= $this->pluck('threadId');
+        return $this->threadId = $this->threadId ?? $this->pluck('threadId');
     }
 
     /**

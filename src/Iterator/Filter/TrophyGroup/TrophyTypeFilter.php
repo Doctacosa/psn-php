@@ -9,10 +9,10 @@ use Tustin\PlayStation\Traits\OperandParser;
 class TrophyTypeFilter extends FilterIterator
 {
     use OperandParser;
-    
-    private TrophyType $trophyType;
-    private int $count;
-   
+
+    private $trophyType;
+    private $count;
+
     public function __construct(Iterator $iterator, TrophyType $trophyType, string $operator, int $count)
     {
         parent::__construct($iterator);
@@ -20,7 +20,7 @@ class TrophyTypeFilter extends FilterIterator
         $this->operator = $operator;
         $this->count = $count;
     }
-   
+
     public function accept()
     {
         return $this->parse($this->current()->trophyCount($this->trophyType), $this->count);

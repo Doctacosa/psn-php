@@ -22,10 +22,10 @@ class TrophyGroupsFactory extends Api implements IteratorAggregate, FactoryInter
      */
     private $title;
 
-    private string $withName = '';
-    private string $withDetail = '';
+    private $withName = '';
+    private $withDetail = '';
 
-    private array $certainTrophyTypeFilter = [];
+    private $certainTrophyTypeFilter = [];
 
     public function __construct(AbstractTrophyTitle $title)
     {

@@ -49,7 +49,7 @@ class Trophy extends Api implements Fetchable
     
     public function id() : int
     {
-        return $this->id ??= $this->pluck('id');
+        return $this->id = $this->id ?? $this->pluck('id');
     }
 
     /**

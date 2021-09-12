@@ -10,7 +10,7 @@ class Concept extends Api implements Fetchable
 {
     use Model;
 
-    private string $conceptId;
+    private $conceptId;
     
 	public function __construct(Client $client, string $conceptId)
 	{

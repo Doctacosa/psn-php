@@ -16,10 +16,10 @@ class TrophyFactory implements IteratorAggregate
      */
     private $group;
     
-    private array $platforms = [];
+    private $platforms = [];
 
-    private string $withName = '';
-    private string $withDetail = '';
+    private $withName = '';
+    private $withDetail = '';
 
     public function __construct(TrophyGroup $group)
     {

@@ -17,9 +17,9 @@ class Group extends Api implements Fetchable
 {
     use Model;
 
-    private string $groupId;
+    private $groupId;
 
-    private array $members;
+    private $members;
 
     public function __construct(GroupsFactory $groupsFactory, string $groupId)
     {

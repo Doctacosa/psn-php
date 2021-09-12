@@ -7,7 +7,7 @@ use FilterIterator;
 
 class TrophyTitleNameFilter extends FilterIterator
 {
-    private string $titleName;
+    private $titleName;
 
     public function __construct(Iterator $iterator, string $titleName)
     {

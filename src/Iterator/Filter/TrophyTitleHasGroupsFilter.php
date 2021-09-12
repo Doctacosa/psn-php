@@ -7,7 +7,7 @@ use FilterIterator;
 
 class TrophyTitleHasGroupsFilter extends FilterIterator
 {
-    private bool $value;
+    private $value;
 
     public function __construct(Iterator $iterator, bool $value)
     {

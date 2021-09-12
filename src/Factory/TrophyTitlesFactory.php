@@ -45,7 +45,7 @@ class TrophyTitlesFactory extends Api implements IteratorAggregate, FactoryInter
      *
      * @var boolean|null
      */
-    private ?bool $hasTrophyGroups = null;
+    private $hasTrophyGroups = null;
 
     public function __construct(User $user)
     {
