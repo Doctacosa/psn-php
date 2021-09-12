@@ -9,7 +9,7 @@ use Tustin\PlayStation\Traits\OperandParser;
 class TrophyTypeFilter extends FilterIterator
 {
     use OperandParser;
-
+    
     private $trophyType;
     private $count;
 
