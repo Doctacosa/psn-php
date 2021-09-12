@@ -177,7 +177,7 @@ class User extends Api implements Fetchable
      *
      * @return string
      */
-    public function staticUserTrophies(): bool
+    public static function staticUserTrophies(): bool
     {
         return self::$staticUserTrophies;
     }
