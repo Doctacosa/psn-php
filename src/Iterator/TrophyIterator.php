@@ -3,6 +3,7 @@ namespace Tustin\PlayStation\Iterator;
 
 use Tustin\PlayStation\Model\Trophy;
 use Tustin\PlayStation\Model\TrophyGroup;
+use Tustin\PlayStation\Model\User;
 use Tustin\PlayStation\Model\UserTrophyTitle;
 
 class TrophyIterator extends AbstractApiIterator
@@ -25,7 +26,7 @@ class TrophyIterator extends AbstractApiIterator
 
     public function access($cursor) : void
     {
-        if ($this->trophyGroup->title() instanceof UserTrophyTitle)
+        if ($this->trophyGroup->title() instanceof UserTrophyTitle && User::staticUserTrophies())
         {
             $results = $this->get(
                 'trophy/v1/users/' . $this->trophyGroup->title()->getFactory()->getUser()->accountId() . '/npCommunicationIds/' . $this->trophyGroup->title()->npCommunicationId() .'/trophyGroups/' . $this->trophyGroup->id() . '/trophies',

@@ -26,6 +26,11 @@ class User extends Api implements Fetchable
 
     private $token;
 
+    private $readUserTrophies;
+
+    //TODO: Bad, don't do static
+    private static $staticUserTrophies = true;
+
     /**
      * Constructs a new user object.
      *
@@ -50,8 +55,9 @@ class User extends Api implements Fetchable
         return $instance;
     }
 
-    public function trophyTitles()
+    public function trophyTitles(bool $readUserTrophies = true)
     {
+        self::$staticUserTrophies = $readUserTrophies;
         return new TrophyTitlesFactory($this);
     }
 
@@ -144,6 +150,16 @@ class User extends Api implements Fetchable
     public function country(): string
     {
         return $this->country;
+    }
+
+    /**
+     * Gets if we want to read the user's trophies data, or the base metadata.
+     *
+     * @return string
+     */
+    public function staticUserTrophies(): bool
+    {
+        return self::$staticUserTrophies;
     }
 
     /**
