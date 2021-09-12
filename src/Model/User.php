@@ -88,6 +88,26 @@ class User extends Api implements Fetchable
     }
 
     /**
+     * Batch convert title ids (CUSA...) to communication ids (NPWR...)
+     * 
+     * Only works for PS4/PS5 titles.
+     * Doesn't work with PPSA... title ids.
+     */
+    public function titleIdsToCommunicationIds($titleIds) : object
+    {
+        //TODO: Uncap, there's a low limit accepted
+        $titleIds = array_slice($titleIds, 0, 5);
+
+        $body = [
+            'npTitleIds' => implode(',', $titleIds)
+        ];
+
+        $results = $this->get('trophy/v1/users/' . $this->accountId() . '/titles/trophyTitles', $body);
+
+        return $results;
+    }
+
+    /**
      * Gets the trophy summary for the user.
      *
      * @return void
